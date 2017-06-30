@@ -52,6 +52,9 @@ set number
 " Display line and row numbers in the status line.
 set ruler
 
+" Highlight 80th column.
+set colorcolumn=80
+
 " This specifies where in Insert mode the <BS> is allowed to delete the
 " character in front of the cursor.  The three items, separated by commas, tell
 " Vim to delete the white space at the start of the line, a line break and the
@@ -86,6 +89,10 @@ if has("gui_running")
 
     " Hide menu bar.
     set guioptions-=m
+
+    " Default window size.
+    set lines=50
+    set columns=100
 
     if has("win32")
         set guifont=Consolas:h11
