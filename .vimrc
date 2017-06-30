@@ -1,0 +1,93 @@
+" Load plugins using pathogen.
+if has("win32")
+	source ~\.vim\bundle\vim-pathogen\autoload\pathogen.vim
+	execute pathogen#infect('~\.vim\bundle\{}')
+else
+	if has("unix")
+		source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
+		execute pathogen#infect('~/.vim/bundle/{}')
+	endif
+endif
+
+" Use UTF-8 character encoding inside Vim.
+set encoding=UTF-8
+
+" Set unnamed '"*' register as default.
+set clipboard=unnamed
+
+" While typing a search command, show immediately where the so far
+" typed pattern matches. The matched string is highlighted.
+set incsearch
+" When there is a previous search pattern, highlight all its matches.
+set hlsearch
+
+" Ignore case in search pattern by default.
+set ignorecase
+" Ignore case if pattern is written in lower case or perform case sensitive search otherwise.
+set smartcase
+
+" When a bracket is inserted, briefly jump to the matching one. 
+set showmatch
+" Include '<' and '>' pair to 'showmatch'.
+set matchpairs+=<:>
+
+" Make <Tab> and <BS> to use 4 spaces instead of tab character without
+" changing how existing tab characters are displayed.
+set expandtab
+set shiftwidth=4
+set softtabstop=-1
+" Make indentation commands align to multiples of 4.
+set shiftround
+
+" Do smart autoindenting when starting a new line.  Works for C-like
+" programs, but can also be used for other languages.
+set smartindent
+" Copy indent from current line when starting a new line (typing <CR>
+" in Insert mode or when using the "o" or "O" command).
+set autoindent
+
+" Display line number in the first column.
+set number
+
+" Display line and row numbers in the status line.
+set ruler
+
+" This specifies where in Insert mode the <BS> is allowed to delete the
+" character in front of the cursor.  The three items, separated by commas, tell
+" Vim to delete the white space at the start of the line, a line break and the
+" character before where Insert mode started.
+set backspace=indent,eol,start
+
+" Extending default symbols in 'list' mode to show tab characters as >--->---.
+set listchars=eol:$,tab:>-
+
+" Ctrl-Shift-F12 goto next error.
+nmap <C-S-F12> :cn<CR>
+
+" Format current buffer or selection as XML document.
+nmap <F9> :%s/>\s*</>\r</eg<CR>:set filetype=xml<CR>gg=G<CR>
+vmap <F9> :s/>\s*</>\r</eg<CR><ESC>:set filetype=xml<CR>gv=<CR>
+
+" Pretify JSON.
+nmap <F10> :%!python -m json.tool<CR>
+vmap <F10> :!python -m json.tool<CR>
+
+" Enable syntax coloring.
+syntax on
+
+" Set Solarized color scheme.
+let g:solarized_visibility="low"
+set background=light
+colorscheme solarized
+
+if has("gui_running")
+    " Hide toolbar.
+    set guioptions-=T
+
+    " Hide menu bar.
+    set guioptions-=m
+
+    if has("win32")
+        set guifont=Consolas:h11
+    endif
+endif
