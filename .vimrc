@@ -78,6 +78,9 @@ vmap <F10> :!python -m json.tool<CR>
 " Enable syntax coloring.
 syntax on
 
+" Ignore whitespace in diff mode
+set diffopt+=iwhite
+
 " Set Solarized color scheme.
 let g:solarized_visibility="low"
 set background=light
