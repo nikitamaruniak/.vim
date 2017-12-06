@@ -9,6 +9,18 @@ else
 	endif
 endif
 
+" Store all backup files in a separated directory.
+if has("win32")
+        set backupdir=~\.vim\backup\\
+        set directory=~\.vim\swap\\
+        set undodir=~\.vim\undo\\
+else
+	if has("unix")
+            set backupdir=~/.vim/backup//
+            set directory=~/.vim/swap//
+            set undodir=~/.vim/undo//
+	endif
+endif
 " Use UTF-8 character encoding inside Vim.
 set encoding=UTF-8
 
