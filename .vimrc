@@ -99,6 +99,12 @@ syntax on
 " Enable filetype plugins (required by NERD Commenter)
 filetype plugin on
 
+" netrw options
+nmap <Leader>. :Explore .<Enter>
+let g:netrw_banner=0
+let g:netrw_browse_split=0
+let g:netrw_liststyle=4
+
 " Ignore whitespace in diff mode
 set diffopt+=iwhite
 
