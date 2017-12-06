@@ -96,6 +96,9 @@ nmap <Leader><Space> :nohl<Enter>
 " Enable syntax coloring.
 syntax on
 
+" Enable filetype plugins (required by NERD Commenter)
+filetype plugin on
+
 " Ignore whitespace in diff mode
 set diffopt+=iwhite
 
