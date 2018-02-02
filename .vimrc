@@ -67,6 +67,9 @@ set ruler
 " Highlight 80th column.
 set colorcolumn=80
 
+" Show statusline.
+set laststatus=2
+
 " This specifies where in Insert mode the <BS> is allowed to delete the
 " character in front of the cursor.  The three items, separated by commas, tell
 " Vim to delete the white space at the start of the line, a line break and the
