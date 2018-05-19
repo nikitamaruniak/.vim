@@ -116,10 +116,16 @@ let g:netrw_liststyle=4
 " Ignore whitespace in diff mode
 set diffopt+=iwhite
 
+" Open diff mode using the vertical split.
+set diffopt+=vertical
+
 " Set Solarized color scheme.
 let g:solarized_visibility="low"
 set background=light
 colorscheme solarized
+
+" Add the current git branch name to the default statusline.
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 if has("gui_running")
     " Hide toolbar.
