@@ -108,7 +108,7 @@ syntax on
 filetype plugin on
 
 " netrw options
-nmap <Leader>. :Explore .<Enter>
+nmap <Leader>. :Explore %:p:h<Enter>
 let g:netrw_banner=0
 let g:netrw_browse_split=0
 let g:netrw_liststyle=4
