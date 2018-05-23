@@ -124,9 +124,6 @@ let g:solarized_visibility="low"
 set background=light
 colorscheme solarized
 
-" Add the current git branch name to the default statusline.
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
 if has("gui_running")
     " Hide toolbar.
     set guioptions-=T
