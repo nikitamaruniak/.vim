@@ -112,8 +112,6 @@ nmap <Leader>. :Explore %:p:h<Enter>
 let g:netrw_banner=0
 let g:netrw_browse_split=0
 let g:netrw_liststyle=4
-" Hide files matched by a .gitignore file if it presents.
-let g:netrw_list_hide=netrw_gitignore#Hide()
 
 " Ignore whitespace in diff mode
 set diffopt+=iwhite
