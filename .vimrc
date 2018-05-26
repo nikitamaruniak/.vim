@@ -24,14 +24,6 @@ endif
 " Use UTF-8 character encoding inside Vim.
 set encoding=UTF-8
 
-if has("unix") && has("x11")
-    " Use X11 clipboard by default.
-    set clipboard=unnamedplus
-else
-    " Use system clipboard by default.
-    set clipboard=unnamed
-endif
-
 " While typing a search command, show immediately where the so far
 " typed pattern matches. The matched string is highlighted.
 set incsearch
