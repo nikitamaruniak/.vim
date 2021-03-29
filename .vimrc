@@ -58,6 +58,9 @@ set autoindent
 " Display line number in the first column.
 set number
 
+" Display relative line number to ease navigation
+set relativenumber
+
 " Display line and row numbers in the status line.
 set ruler
 
