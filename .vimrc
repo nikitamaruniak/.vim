@@ -134,3 +134,18 @@ if has("gui_running")
         set guifont=Consolas:h11
     endif
 endif
+
+if has('ide')
+    set ideajoin
+
+    map <Leader>f <Action>(RefactoringMenu)
+    map <Leader>v <Action>(Vcs.QuickListPopupAction)
+    map <Leader>t <Action>(Vcs.UpdateProject)
+    map <Leader>r <Action>(Run)
+    map <Leader>R <Action>(ChooseRunConfiguration)
+    map <Leader>d <Action>(Debug)
+    map <Leader>D <Action>(ChooseDebugConfiguration)
+    map <Leader>k <Action>(CheckinProject)
+    map <Leader>K <Action>(Vcs.Push)
+    map <Leader>b <Action>(ToggleLineBreakpoint)
+endif
