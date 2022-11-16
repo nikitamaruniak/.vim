@@ -82,17 +82,6 @@ set listchars=eol:$,tab:>-
 " Map comma (,) as Leader key
 let mapleader=","
 
-" Ctrl-Shift-F12 goto next error.
-nmap <C-S-F12> :cn<CR>
-
-" Format current buffer or selection as XML document.
-nmap <F9> :%s/>\s*</>\r</eg<CR>:set filetype=xml<CR>gg=G<CR>
-vmap <F9> :s/>\s*</>\r</eg<CR><ESC>:set filetype=xml<CR>gv=<CR>
-
-" Pretify JSON.
-nmap <F10> :%!python -m json.tool<CR>
-vmap <F10> :!python -m json.tool<CR>
-
 " Clear search highlights
 nmap <Leader><Space> :nohl<Enter>
 
