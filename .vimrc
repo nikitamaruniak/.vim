@@ -59,6 +59,9 @@ set colorcolumn=80
 " Show statusline.
 set laststatus=2
 
+" show git status in the status line
+set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
+
 " This specifies where in Insert mode the <BS> is allowed to delete the
 " character in front of the cursor.  The three items, separated by commas, tell
 " Vim to delete the white space at the start of the line, a line break and the
