@@ -1,14 +1,3 @@
-" Load plugins using pathogen.
-if has("win32")
-	source ~\.vim\bundle\vim-pathogen\autoload\pathogen.vim
-	execute pathogen#infect('~\.vim\bundle\{}')
-else
-	if has("unix")
-		source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
-		execute pathogen#infect('~/.vim/bundle/{}')
-	endif
-endif
-
 " Store all backup files in a separated directory.
 if has("win32")
         set backupdir=~\.vim\backup\\
@@ -137,4 +126,5 @@ if has('ide')
     map <Leader>k <Action>(CheckinProject)
     map <Leader>K <Action>(Vcs.Push)
     map <Leader>b <Action>(ToggleLineBreakpoint)
+    map <Leader>. <Action>(ActivateProjectToolWindow)
 endif
