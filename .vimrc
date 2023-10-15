@@ -127,4 +127,6 @@ if has('ide')
     map <Leader>K <Action>(Vcs.Push)
     map <Leader>b <Action>(ToggleLineBreakpoint)
     map <Leader>. <Action>(ActivateProjectToolWindow)
+else
+    map <Leader>m :make<Enter>
 endif
