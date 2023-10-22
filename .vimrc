@@ -133,3 +133,11 @@ if has('ide')
 else
     map <Leader>m :make<Enter>
 endif
+
+" Ukrainian layout support. Use <ctrl-6> (<ctrl-^>) in Insert mode, to toggle layouts.
+set keymap=ukrainian-enhanced
+" Default - latin layout
+set iminsert=0
+" Default - latin layout in search mode
+set imsearch=0
+
