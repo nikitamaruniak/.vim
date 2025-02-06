@@ -37,6 +37,10 @@ set softtabstop=-1
 " Make indentation commands align to multiples of 4.
 set shiftround
 
+" But keep tabs and make them 8 chars wide for the C language
+autocmd BufRead,BufNewFile *.c set noexpandtab shiftwidth=8 tabstop=8
+autocmd BufRead,BufNewFile *.h set noexpandtab shiftwidth=8 tabstop=8
+
 " Do smart autoindenting when starting a new line.  Works for C-like
 " programs, but can also be used for other languages.
 set smartindent
@@ -74,8 +78,14 @@ set listchars=eol:$,tab:>-
 " Map comma (,) as Leader key
 let mapleader=","
 
+" Map backward character search to \
+nnoremap \ ,
+
 " Clear search highlights
 nmap <Leader><Space> :nohl<Enter>
+"
+" Bind toggle list mode to `,l`
+nmap <Leader>l :set list!<Enter>
 
 " Enable syntax coloring.
 syntax on
@@ -141,3 +151,12 @@ set iminsert=0
 " Default - latin layout in search mode
 set imsearch=0
 
+" Run make silently
+let &makeprg='make -s'
+
+" Use rg instead of grep
+set grepprg=rg\ --vimgrep\ --color\ never\ $*
+set grepformat=%f:%l:%c:%m
+
+" Use the 'patience' algorithm for better diffs (sometimes)
+set diffopt+=algorithm:patience
