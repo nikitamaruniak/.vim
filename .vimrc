@@ -82,10 +82,18 @@ let mapleader=","
 nnoremap \ ,
 
 " Clear search highlights
-nmap <Leader><Space> :nohl<Enter>
+nnoremap <Leader><Space> :nohl<Enter>
 "
 " Bind toggle list mode to `,l`
-nmap <Leader>l :set list!<Enter>
+nnoremap <Leader>l :set relativenumber!<Enter>
+
+" Some of unimpaired mappings
+nnoremap [q :cprev<Enter>
+nnoremap ]q :cnext<Enter>
+nnoremap [b :bprev<Enter>
+nnoremap ]b :bnext<Enter>
+nnoremap [a :prev<Enter>
+nnoremap ]a :next<Enter>
 
 " Enable syntax coloring.
 syntax on
