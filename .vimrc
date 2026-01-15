@@ -75,17 +75,23 @@ set backspace=indent,eol,start
 " Extending default symbols in 'list' mode to show tab characters as >--->---.
 set listchars=eol:$,tab:>-
 
-" Map comma (,) as Leader key
+" Allow modified hidden buffers
+set hidden
+
+" Map Leader key to comma (,)
 let mapleader=","
 
-" Map backward character search to \
-nnoremap \ ,
+" Use forward slash instead of comma for navigation
+noremap \ ,
 
-" Clear search highlights
+" Bind clear search highlights to `,space`
 nnoremap <Leader><Space> :nohl<Enter>
-"
+
 " Bind toggle list mode to `,l`
 nnoremap <Leader>l :set relativenumber!<Enter>
+
+" Bind run make to `,m`
+nnoremap <Leader>m :make<Enter>
 
 " Some of unimpaired mappings
 nnoremap [q :cprev<Enter>
@@ -112,6 +118,9 @@ set diffopt+=iwhite
 
 " Open diff mode using the vertical split.
 set diffopt+=vertical
+"
+" Use the 'patience' algorithm for better diffs (sometimes)
+set diffopt+=algorithm:patience
 
 " Set Solarized color scheme.
 let g:solarized_visibility="low"
@@ -134,24 +143,6 @@ if has("gui_running")
     endif
 endif
 
-if has('ide')
-    set ideajoin
-
-    map <Leader>f <Action>(RefactoringMenu)
-    map <Leader>v <Action>(Vcs.QuickListPopupAction)
-    map <Leader>t <Action>(Vcs.UpdateProject)
-    map <Leader>r <Action>(Run)
-    map <Leader>R <Action>(ChooseRunConfiguration)
-    map <Leader>d <Action>(Debug)
-    map <Leader>D <Action>(ChooseDebugConfiguration)
-    map <Leader>k <Action>(CheckinProject)
-    map <Leader>K <Action>(Vcs.Push)
-    map <Leader>b <Action>(ToggleLineBreakpoint)
-    map <Leader>. <Action>(ActivateProjectToolWindow)
-else
-    map <Leader>m :make<Enter>
-endif
-
 " Ukrainian layout support. Use <ctrl-6> (<ctrl-^>) in Insert mode, to toggle layouts.
 set keymap=ukrainian-enhanced
 " Default - latin layout
@@ -166,5 +157,7 @@ let &makeprg='make -s'
 set grepprg=rg\ --vimgrep\ --color\ never\ $*
 set grepformat=%f:%l:%c:%m
 
-" Use the 'patience' algorithm for better diffs (sometimes)
-set diffopt+=algorithm:patience
+" Show partial command and the size of selected region on the last line
+" of the screen
+set showcmd
+
